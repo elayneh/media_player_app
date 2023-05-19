@@ -6,9 +6,10 @@ const theme = {};
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Store />
-    </ThemeProvider>
+    // <ThemeProvider theme={theme}>
+    //   <Store />
+    // </ThemeProvider>
+    <p>Media player app</p>
   );
 }
 
