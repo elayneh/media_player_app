@@ -1,15 +1,15 @@
 import "./App.css";
-// import Container from "./Components/Container";
 import { ThemeProvider } from "styled-components";
+import box from "./Components/box";
 
 const theme = {};
 
 function App() {
-  return <ThemeProvider theme={theme}>{/* <Container /> */}
-  <h1>
-    MEDIA PLAYER APP
-
-    </h1></ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      <box />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
