@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { ADD_SONG, DELETE_SONG, GET_SONG, UPDATE_SONG } from "./ActionTypes";
+import { ADD_ITEM, DELETE_ITEM, GET_ITEM, UPDATE_ITEM } from "./ActionTypes";
 import {
   deleteSongAPI,
   getSongAPI,
@@ -11,7 +11,7 @@ import {
   deleteSong,
   getSongs,
   playCurrent,
-} from "../../ReduxToolKit/Features/SongSlice";
+} from "../../Toolkit/Features/itemSlice";
 
 export function* getSongSaga() {
   const { data } = yield getSongAPI();
@@ -32,8 +32,8 @@ export function* deleteSongSaga(action) {
 }
 
 export function* wactchSongAsync() {
-  yield takeEvery(ADD_SONG, addSongSaga);
-  yield takeEvery(GET_SONG, getSongSaga);
-  yield takeEvery(UPDATE_SONG, updateSongSaga);
-  yield takeEvery(DELETE_SONG, deleteSongSaga);
+  yield takeEvery(ADD_ITEM, addSongSaga);
+  yield takeEvery(GET_ITEM, getSongSaga);
+  yield takeEvery(UPDATE_ITEM, updateSongSaga);
+  yield takeEvery(DELETE_ITEM, deleteSongSaga);
 }
