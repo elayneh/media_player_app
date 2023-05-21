@@ -10,9 +10,9 @@ import {
 
 import { useDispatch, useSelector } from "react-redux";
 import { FaRegEdit } from "react-icons/fa";
-import { ArtistEditInput } from "./Styles/FileUploadStyle.style";
+import { ArtistEditInput } from "../Styles/fileUploadStyle.style";
 import { useState } from "react";
-import { UPDATE_SONG } from "./ReduxSaga/Types/ActionTypes";
+import { UPDATE_ITEM } from "./Saga/Types/ActionTypes";
 const DisplayItem = () => {
   let currentMusic = useSelector((state) => state.Songs.currentSong);
   const [clickedUpdate, setClickedUpdate] = useState(false);
@@ -21,7 +21,7 @@ const DisplayItem = () => {
   const handleSubmit = async (song, e) => {
     const id = song._id;
     const artist = { changedValue };
-    dispatch({ type: UPDATE_SONG, id, artist });
+    dispatch({ type: UPDATE_ITEM, id, artist });
     setClickedUpdate(false);
     setChangedValue("");
   };
@@ -81,7 +81,7 @@ const DisplayItem = () => {
         </div>
         <div>
           <AudioPlayer
-            src={`https://media-player-mbxrk9dh7-betenatefera-gmailcom.vercel.app/uploads/${currentMusic.song}`}
+            src={`https://media-player-mbxrk9dh7-betenatefera-gmailcom.vercel.app/uploads${currentMusic.song}`}
             controls
             autoPlay
           ></AudioPlayer>

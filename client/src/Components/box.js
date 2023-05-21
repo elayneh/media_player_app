@@ -2,18 +2,18 @@ import React from "react";
 import FileUpload from "./fileUpload";
 import ItemList from "./itemList";
 import Header from "./header";
-// import displayItem from "./displayItem";
-import { Box, boxContent } from "../Styles/Box.style";
+import DisplayItem from "./displayItem";
+import { Box, BoxContent } from "../Styles/Box.style";
 
 const box = () => {
   return (
     <Box>
       <Header />
-      <boxContent>
+      <BoxContent>
         <ItemList />
-        {<displayItem />}
+        {<DisplayItem />}
         <FileUpload />
-      </boxContent>
+      </BoxContent>
     </Box>
   );
 };

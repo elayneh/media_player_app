@@ -1,15 +1,14 @@
 import "./App.css";
-import Store from "./Components/box";
+import Container from "./Components/Container";
 import { ThemeProvider } from "styled-components";
 
 const theme = {};
 
 function App() {
   return (
-    // <ThemeProvider theme={theme}>
-    //   <Store />
-    // </ThemeProvider>
-    <p>Media player app</p>
+    <ThemeProvider theme={theme}>
+      <Container />
+    </ThemeProvider>
   );
 }
 

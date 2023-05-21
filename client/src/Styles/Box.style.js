@@ -10,7 +10,7 @@ export const Box = styled.div`
     overflow-y: scroll;
   }
 `;
-export const boxContent = styled.div`
+export const BoxContent = styled.div`
   display: flex;
   flex-direction: row;
   text-align: center;
