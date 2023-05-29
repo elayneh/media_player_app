@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../test_project_client_side/src"
+		}
+	],
+	"settings": {
+		"files.autoSave": "onFocusChange"
+	}
+}
