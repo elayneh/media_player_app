@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "devStart": "nodemon server.js",
+    "build": "gulp build",
     "run build": "npm run build && server.js"
   },
   "dependencies": {
