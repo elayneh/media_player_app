@@ -3,14 +3,18 @@ import { addSong, deleteSong, getSongsSuccess } from "../store/slice/songslice";
 import axios from "axios";
 
 function* workGetSongsFetch() {
-  const songs = yield call(() => fetch("http://localhost:8000/songs"));
+  const songs = yield call(() =>
+    fetch("https://media-player-app.onrender.com/songs")
+  );
   const formattedSongs = yield songs.json();
 
   yield put(getSongsSuccess(formattedSongs));
 }
 
 function* addSongToServer() {
-  const songs = yield call(() => axios.post("http://localhost:8000/songs"));
+  const songs = yield call(() =>
+    axios.post("https://media-player-app.onrender.com/songs")
+  );
   const addedSong = yield songs.json();
   yield put(addSong(addedSong));
 }
@@ -18,12 +22,15 @@ function* addSongToServer() {
 function* updateSongOnServer(action) {
   const { title, album, artist, genre } = action.payload;
   const songs = yield call(() =>
-    axios.patch(`http://localhost:8000/songs/${action.payload.id}`, {
-      title,
-      album,
-      artist,
-      genre,
-    })
+    axios.patch(
+      `https://media-player-app.onrender.com/songs/${action.payload.id}`,
+      {
+        title,
+        album,
+        artist,
+        genre,
+      }
+    )
   );
   const updateSong = yield songs.json();
 
@@ -35,7 +42,7 @@ function* deleteSongFromServer(action) {
   try {
     yield call(
       axios.delete,
-      `http://localhost:8000/songs/${action.payload.id}`
+      `https://media-player-app.onrender.com/songs/${action.payload.id}`
     );
     yield put(deleteSong);
   } catch (error) {

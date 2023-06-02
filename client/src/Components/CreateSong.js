@@ -39,13 +39,16 @@ const CreateSong = () => {
     try {
       // Make API call to add song to the database
 
-      const response = await fetch("http://localhost:8000/songs", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newSong),
-      });
+      const response = await fetch(
+        "https://media-player-app.onrender.com/songs",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newSong),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to add song");

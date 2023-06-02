@@ -21,7 +21,7 @@ function SongList({ id }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/songs/statstics")
+      .get("https://media-player-app.onrender.com/songs/statstics")
       .then((response) => setStats(response.data))
       .catch((error) => setError(error.message));
   }, []);
@@ -48,7 +48,7 @@ function SongList({ id }) {
           <Flex key={song._id} mt={2}>
             <Box>
               <AudioPlayer
-                src={`http://localhost:8000/songs`}
+                src={`https://media-player-app.onrender.com/songs`}
                 controls
                 autoPlay
               ></AudioPlayer>
